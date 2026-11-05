@@ -23,6 +23,7 @@ dev = [
     "matplotlib>=3.7",
     "nbconvert",
     "powerlaw",
+    "pyright",
     "pytest",
     "ruff",
     "statsmodels>=0.14",
@@ -30,6 +31,9 @@ dev = [
 
 [tool.ruff]
 line-length = 88
+
+[tool.pyright]
+typeCheckingMode = "standard"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
