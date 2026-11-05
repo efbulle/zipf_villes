@@ -11,6 +11,8 @@ Le temps de convergence est long : il croît comme 1/sigma². Avec sigma = 0.1 i
 plusieurs centaines de périodes pour que la queue de la distribution se stabilise.
 """
 
+from typing import cast
+
 import numpy as np
 from scipy import integrate, optimize, stats
 
@@ -58,4 +60,4 @@ def exposant_theorique(mu=0.0, sigma=0.1):
     )
     if derive >= 0:
         return float("nan")
-    return float(optimize.brentq(esperance, 1e-3, 50))
+    return float(cast(float, optimize.brentq(esperance, 1e-3, 50)))
